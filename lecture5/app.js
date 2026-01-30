@@ -55,7 +55,7 @@ b(20,38) // call kiya then outpt=58
 function printarray(...allParams){ // ... ye ek sprad operator hai(jo saare values ko collect karke array me convert karta)
     console.log(allParams);
 }
-b(20,38,77,88) // call kiya then outpt array form me dega-[20,38,77,88]
+printarray(20,38,77,88) // call kiya then outpt array form me dega-[20,38,77,88]
 
 
 
