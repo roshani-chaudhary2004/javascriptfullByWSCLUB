@@ -132,3 +132,26 @@ console.log(addData(1,3)); // output 4
  console.log(square(5)); // output 25
  
 
+ // Q count  the word in the sentence
+// method1.
+ function checkWordCount(str){
+    return(str.split("").length);
+    
+
+ }
+ let n=checkWordCount("hii roshani chaudhary")
+ console.log(l); // total no of word 3
+ 
+// method2.
+function checkWordCount(str){
+    let word=1;
+    for(let v of str){
+        if(v==" "){
+            word++;
+    }
+}
+
+ return word;
+}
+ let =checkWordCount("hii roshani chaudhary")
+ console.log(l); // total no of word 3
