@@ -28,7 +28,7 @@ let l2=[4,5,6,7]
 let finalArray=[...l1,...l2] // shalow copy huya
 console.log(finalArray); // output-- 1,2,3,4,4,5,6,7
 
-// addvalues starting and last in l1
+// add values starting and last in l1
 l1=[25,...l1,50]   // 15 add starting and 50 add in last
 console.log(l1); //output 25,1,2,3,4,50
 
