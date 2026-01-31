@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Color Changer</button>
+</body>
+<script>
+    let bodytag=document.querySelector("body") //taget body tag
+    let btn=document.querySelector("button")
+    btn.addEventListener("click",()=>{
+        let redCode=Math.random()*255  //0--1 tak number deta aur har no me 255 multiple kar do
+        let greenCode=Math.random()*255
+        let blueCode=Math.random()*255
+
+      bodytag.style.background=`rgb(${redCode},${greenCode},${blueCode})`
+    })
+</script>
+</html>
