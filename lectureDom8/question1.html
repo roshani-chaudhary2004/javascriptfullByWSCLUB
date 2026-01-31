@@ -4,8 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+        .main{
+            width: 1000px;
+            margin:auto;
+        }
+        .main textarea{
+            width: 100%;
+            height: 200px;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
+    <div class="main">
+        <textarea name="" id=""></textarea>
+        <h2>Length-<span>0</span></h2>
+        <div id="resdiv"></div>
+    </div>
     
 </body>
+<script>
+    let textareaElement=document.querySelector("textarea")
+    let leangthElement=document.querySelector("h2 span")
+    let resDivElement=document.querySelector("#resdiv")
+     textareaElement.addEventListener("keyup",()=>{
+        resDivElement.innerHTML=textareaElement.value
+        leangthElement.innerHTML=textareaElement.value.length
+
+     })
+</script>
 </html>
