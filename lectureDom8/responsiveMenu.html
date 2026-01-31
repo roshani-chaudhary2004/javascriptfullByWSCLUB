@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>Document</title>
+    <style>
+        *{
+           margin: 0px; 
+           padding: 0px;
+           font-family: sans-serif;
+           box-sizing: border-box;
+           text-decoration: none;
+           list-style: none;
+        }
+        header{
+            display: flexd;
+            padding:0px 50px;
+            box-shadow: 0px 2px 10px 0px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav ul{
+            display: flex;
+            gap: 30px;
+        }
+        header nav ul li a{
+            color: black;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .mIcon{
+            display: none;
+        }
+        @media only screen and (min-width:200px) and(max-width:575px){
+            header nav{
+            position: fixed;
+            top: 0px;
+                background-color:#ccc ;
+                width: 80%;
+                padding: 10px;
+                height: 100vh;
+                transition:0.5s ;
+               
+                left:-100%;
+            }
+            header nav ul{
+                flex-direction: column;
+                
+            }
+            .mIcon{
+                display: block;
+                cursor:pointer;
+            }
+            .showMenu{
+                left: 0px !important;
+
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+       <figure>
+        <img  width="100" src="https://smartcitymohaliplots.realtynivesh.com/Logo.svg" alt="" srcset="">
+       </figure> 
+       <i class="fa-solid fa-bars  mIcon"></i>         
+       <nav>
+        <ul>
+            <li> <a href="">Home</a></li>
+            <li> <a href="">About</a></li>
+            <li> <a href="">Course</a></li>
+            <li> <a href="">Gallery</a></li>
+            <li> <a href="">Contact Us</a></li>
+        </ul>
+        </nav>
+        
+      
+    </header>
+</body>
+<script>
+    let mIcon=document.querySelector(".mIcon")
+    let navElement=document.querySelector("nav")
+    mIcon.addEventListener("click",()=>{
+        navElement.classList.toggle('showMenu')
+    })
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>save</button>
+    <h1>Welcom roshani</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat ut earum iusto officia fuga necessitatibus obcaecati consequatur ex quis quam, perspiciatis est consequuntur incidunt veniam saepe impedit. Expedita, doloribus beatae.</p>
+</body>
+<script>
+   let btn =document.querySelector("button")//  <button>save</button>
+   let headingElement=document.querySelector("h1")//<h1>Welcom roshani</h1>
+   let paraElement=document.querySelector("p")
+
+   btn.addEventListener("click",()=>{
+    paraElement.style.color="red"
+    headingElement.style.color="yellow"
+    headingElementData=headingElement.innerHTML//Welcom roshani
+    paraElementData=paraElement.innerHTML//Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat ut earum iusto officia fuga necessitatibus obcaecati consequatur ex quis quam, perspiciatis est consequuntur incidunt veniam saepe impedit. Expedita, doloribus beatae.
+    headingElement.innerHTML=paraElementData
+    //h1 tag ke innerHtml ke under
+    //Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat ut earum iusto officia fuga necessitatibus obcaecati consequatur ex quis quam, perspiciatis est consequuntur incidunt veniam saepe impedit. Expedita, doloribus beatae.
+   paraElement.innerHTML=headingElementData
+   // p tag ke innerHtml
+   //Welcom roshani
+   
+   })
+</script>
+</html>

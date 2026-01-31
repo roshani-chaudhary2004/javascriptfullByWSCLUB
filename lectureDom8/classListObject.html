@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            background-color: red;
+            font-size: 25px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button id="btnadd">Add Class</button>
+    <button id="btnremove">Remove Class</button>
+    <button id="btntoggle">Toggle Class</button>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet non tempora ea similique fuga dolores deserunt culpa earum, eaque officiis nemo debitis iste, vero eius placeat maiores, nisi alias illum.</p>
+</body>
+<script>
+    let btnaddElement=document.querySelector("#btnadd");
+    let btnremoveElement=document.querySelector("#btnremove");
+    let btntoggleElement=document.querySelector("#btntoggle");
+    let paraElement=document.querySelector("p");
+    btnaddElement.addEventListener("click",()=>{
+        paraElement.classList.add('active');
+    });
+
+    btnremoveElement.addEventListener("click",()=>{
+        paraElement.classList.remove('active')
+    });
+
+    btntoggleElement.addEventListener("click",()=>{
+        paraElement.classList.toggle('active')
+    })
+    
+</script>
+</html>
