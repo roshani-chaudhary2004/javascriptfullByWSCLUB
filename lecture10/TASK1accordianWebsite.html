@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            font-family: sans-serif;
+        }
+        h1{
+            text-align: center;
+            padding: 5px 0px ;
+        }
+        .faqMid{
+            max-width: 1000px;
+            margin: auto;
+        }
+        .faqItem{
+           border: 1px solid #ccc; 
+           margin-bottom: 20px;
+        }
+        .faqItem h3{
+            background-color: bisque;
+            padding: 10px;
+            position: relative;
+        }
+         .faqItem h3 span{
+            position:absolute ;
+            right: 10px;
+         }
+        .ans{
+            padding: 10px;
+            display:none;
+        }
+        .showAns{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>FAQs About Leicester Taxi Service</h1>
+    <div class="faqMid">
+        <div class=faqItem>
+            <h3>1.How do I book a taxi? <span>+</span></h3>
+            <div class="ans">1.Online or all our customer support team to receive a confirmation instantly</div>
+        </div>
+
+        <div class=faqItem>
+            <h3>2. What areas do you cover in Leicester?<span>+</span> </h3>
+            <div class="ans">2. Leicester and major UK airports, seaports, and long-distance destinations</div>
+        </div>
+
+         <div class=faqItem>
+            <h3>3. Can I pre-book a cab? <span>+</span></h3>
+            <div class="ans">3.Yes, advance bookings ensure availability with punctual pickup </div>
+        </div>
+
+         <div class=faqItem>
+            <h3>4. How can I track my taxi? <span>+</span></h3>
+            <div class="ans">4. GPS tracking available on all rides.</div>
+        </div>
+
+         <div class=faqItem>
+            <h3>5. What payment methods are accepted? <span>+</span></h3>
+            <div class="ans">5.Cash, credit/debit cards, and online payments</div>
+        </div>
+    </div>
+</body>
+<script>
+    let allQuestion=document.querySelectorAll(".faqItem h3") // ye nodelist bana kar dega
+    allQuestion.forEach((question,index)=>{ // forEach se saare question alag alag print honge
+          question.addEventListener("click",()=>{
+
+            allQuestion.forEach((q,i)=>{
+                if(i!=index){
+                    q.lastElementChild.innerHTML="+"
+                    q.nextElementSibling.classList.remove("showAns")
+                }
+            })
+
+
+            //click question logic
+            if(question.lastElementChild.innerHTML=="+"){
+                question.lastElementChild.innerHTML="-"
+            }
+            else{
+                question.lastElementChild.innerHTML="+"
+            }
+            question.nextElementSibling.classList.toggle("showAns")
+          })
+    })
+</script>
+</html>

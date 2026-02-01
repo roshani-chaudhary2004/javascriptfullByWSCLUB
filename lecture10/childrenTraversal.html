@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <h1>Welcome to ws</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis repellat ipsam cupiditate similique. Ea iste, ab tenetur doloribus magni est impedit eius nihil ducimus itaque obcaecati dolorum necessitatibus animi sequi?</p>
+        <button>save</button>
+    </div>
+</body>
+<script>
+    let mainElement=document.querySelector(".main")
+    console.log(mainElement.children); // htmlCollection deta hai sirf tag ka araary me---[h,p,button]
+    // particular kisi index par nikalna ho to
+    console.log(mainElement.children[0]);// h tag dega
+    console.log(mainElement.children[1]); // p tag
+     console.log(mainElement.children[2]);// button tag dega
+
+     //important--- AGAR CHILDREN PE DIRECT ACCESS KARNA TO (for of) loop lagaiye but agr forEach ka use kar rahe to ---(Array.form(mainElement.children).forEach((item)=>{ console.log(item)} iska use kariye --isko array me change kareiye pahle phir forEach ka use kaiye
+           
+     // agr ek sath nikalna hai to (of loop) lagaiye
+     for(let v of mainElement.children){
+        console.log(v); // output h.p.button
+        // agr text nikalna ho to
+        console.log(v.innerHTML); //saare tag ka data or text mil jayega
+        
+
+        //mainElement.children HTML Collection haai isliye 'forEach' ispar kaam nahi karega kyuki ye array ke form nahi hota
+        // isko array me convert karo
+        Array.form(mainElement.children).forEach((item)=>{
+            console.log(item); // output--<h1>Welcome to ws</h1>
+                               //           <p>Lorem ipsum dolor sit amet <p/>
+                               //            <button>save</button>
+
+
+                               // under ki data or text nikalna
+                               console.log(item.innerHTML);
+                               
+        })
+        
+     }
+</script>
+</html>

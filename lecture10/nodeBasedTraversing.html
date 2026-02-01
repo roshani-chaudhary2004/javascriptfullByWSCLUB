@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div class="main">
+
+        <h1>Welcome to ws</h1>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis repellat ipsam cupiditate similique. Ea iste, ab tenetur doloribus magni est impedit eius nihil ducimus itaque obcaecati dolorum necessitatibus animi sequi?</p>
+
+        <button>save</button>
+    </div>
+     
+</body>
+<script>
+    //children only element(tag) ki baat karta hai
+    // childNode-hamesha element(tag) aur gap ki baat karta hai
+   let mainElement=document.querySelector(".main") 
+   console.log(mainElement.childNodes); // NodeList(9)[text,h1,text,p,text,button]
+   console.log(mainElement.children);//HTMCollectin(4)[u,h1,button,p]
+
+   console.log(mainElement.firstChild); // sapce answer hai--text
+   
+   
+</script>
+</html>
