@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: sans-serif;
+        }
+        .formSection{
+            display: grid;
+            padding: 40px;
+            grid-template-columns: 20% auto;
+            gap: 30px;
+        }
+        .formSection form{
+            padding: 15px;
+            box-shadow: 0px 0px 10px 2px  #ccc;
+        }
+        .formSection form button{
+            width: 100%;
+            border: none;
+            background-color: red;
+            color: antiquewhite;
+            padding: 8px 0px;
+        }
+        .formSection form h3{
+            text-align: center;
+            padding: 15px;
+        }
+        .inputOter{
+            margin-bottom: 10px;
+        }
+       .inputOter label{
+        display: block;
+        font-size: 14px;;
+       }
+       .inputOter input{
+        width: 100%;
+        height: 30px;
+       }
+    </style>
+</head>
+<body>
+    <section class="formSection">
+        <form action="">
+            <h3>Enquire Now</h3>
+            <div class="inputOter">
+                <label for="">Name</label>
+                <input type="text" name="userName">
+            </div>
+            <div class="inputOter">
+                <label for="">Email</label>
+                <input type="email" name="userEmail">
+            </div>
+            <div class="inputOter">
+                <label for="">Phone No</label>
+                <input type="text" name="userPhone">
+            </div>
+            <button>Save</button>
+        </form>
+        <div>
+            <table></table>
+        </div>
+
+    </section>
+</body>
+<script>
+    let formElement=document.querySelector(".formSection form")
+    formElement.addEventListener('submit',(e)=>{
+        //  console.log(event.target); //form tag 
+        let username=event.target.userName.value;  // form me fill ki gai value ayegi
+         let useremail=event.target.userEmail.value; // email ayega
+          let userphone=event.target.userPhone.value; // phone no ayega
+          // agar values ko remove karna ho
+          event.target.reset() 
+
+
+
+
+
+        event.preventDefault() // page  refresh stop
+
+    })
+
+    // let body=document.querySelector("body")
+    // body.addEventListener("contextmenu",(e)=>{ // right click nahi hoga
+    //     e.preventDefault()
+    // })
+
+
+
+
+
+</script>
+</html>
