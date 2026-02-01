@@ -9,10 +9,27 @@
             width: 1000px;
             height: 500px;
             margin: auto;
+            border: 1px solid red;
         }
     </style>
 </head>
 <body>
-    <div class="main"></div>
+    <div class="main">
+    <h1>    Welcom roshani chaudhary</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam consequatur, similique, esse hic, cum porro natus distinctio nemo odit molestias cumque? Id earum placeat fugiat deleniti exercitationem saepe, praesentium deserunt.</p>
+    <button>Read More</button>
+    </div>
 </body>
+<script>
+    let mainElement=document.querySelector(".main")
+    mainElement.addEventListener("click",(e)=>{ // e ke jagah kuch bhi likh do
+        console.log(e.type); // click hai(type fixed keyword hai)
+        console.log(e.target); // (brouser pe diye gaye text ko click karne par uska code dikh jata)---- target fixedkeyword hai
+        console.log(e.currentTarget); // mainElement
+        
+        
+        
+
+    })
+</script>
 </html>

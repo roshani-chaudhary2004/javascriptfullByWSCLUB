@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        font-family: sans-serif;
+        box-shadow:0px 0px 10px 2px #ccc;
+    }
+        .productCard{
+            width:200px
+        }
+        .productCard img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="productCard">
+        <img src="https://uptownskylla.in/wp-content/uploads/2022/09/01_01-scaled.jpg" alt="" srcset="">
+        <h1>Iphone</h1>
+        <button>Add to card</button>
+    </div>
+</body>
+<script>
+    let btnElement=document.querySelector("button")
+    let productCardElement=document.querySelector(".productCard")
+    productCardElement.addEventListener("click",()=>{
+
+    })
+    btnElement.addEventListener("click",(e)=>{
+        console.log("add to card in the box"); 
+        
+        e.stopPropagation()// button per click karne par sirf output (add to card in the box) ye ayegi
+
+    })
+</script>
+</html>
