@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+</body>
+   <script>
+// synchrounous task
+   console.log("task1");
+   console.log("task2");
+   console.log("task3");
+   
+   // asynchrounous task
+   console.log("task4");
+   setTimeout( ()=>{
+    console.log("task5");
+   }, 3000);
+   console.log("task6");
+   console.log("task7");
+   // output:
+   // task1
+   // task2
+   // task3
+   // task4
+   // task6
+   // task7
+   // task5
+   
+
+
+
+// use callback function for asynchrounous task jo asyn code ko synchrounous bana de
+
+setTimeout( function taskA(){
+    console.log("taskA");
+    setTimeout( function taskB(){
+        console.log("taskB");
+    }, 5000 );
+}, 2000 );
+// output:
+// taskA (after 2 sec)
+// taskB (after 5 sec)
+
+// CALLBACK HELL
+setTimeout( function task1(){
+    console.log("task1");
+    setTimeout( function task2(){
+        console.log("task2");
+        setTimeout( function task3(){
+            console.log("task3");
+            setTimeout( function task4(){
+                console.log("task4");
+            }, 1000 );
+        }, 2000 );
+    }, 5000 );
+}, 2000 );
+// output:
+// task1 (after 2 sec)
+// task2 (after 5 sec)
+// task3 (after 2 sec)
+// task4 (after 1 sec)
+//sabse pehle task1 chalega, uske baad task2, uske baad task3, uske baad task4 chalega
+// kyuki humne callback function ka use kiya hai
+// isse hum asynchrounous code ko synchrounous bana sakte hain
+// lekin isse code bahut complex ho jata hai, isse avoid karna chahiye
+
+
+   </script>
+</html>
