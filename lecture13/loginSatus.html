@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let loginStatus = true;  // agar user login hai to true
+    let myPromise=new Promise((resolve,reject)=>{
+        if(loginStatus){
+            resolve("user is logged in");
+        }else{
+            reject("user is not logged in");
+        }
+    })
+
+    // data ko nikalne ke liye then aur catch ka use karte hai
+    myPromise.then((value)=>{ // ye tab call hoga jab promise resolve hoga nahi to catch call hoga
+        // value me jo bhi resolve ke under bheja hai vo aayega
+        console.log("Login Status:",value); // jab promise resolve hoga tab ye call hoga
+    }).catch((error)=>{
+        // error me jo bhi reject ke under bheja hai vo aayega
+        console.log("Login Status:",error); // jab promise reject hoga tab ye call hoga
+</script>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises in JavaScript</title>
+</head>
+<body>
+    <h1>Promises in JavaScript</h1>
+    <p>This page is under construction. Please check back later for content on Promises in
+    JavaScript.</p>
+</body>
+<script>
+  let  myPromise=new Promise((resolve,reject)=>{ // ye ek promise object create karega 
+    resolve("welcome to promise in js"); // jab promise successful ho jata hai to ye call hota hai
+    resolve({status:1,msg:"promise resolved"}); // ye  resolve ke under object bhi bhej sakte hai
+  })
+  // resolve ke under jo bhi beje hai vo  nikalne ke liye hum then ka use karte hai
+  // then method promise ke successful hone par call hota hai
+    myPromise.then((value)=>{
+        console.log("promise resolved with value:",value);// ye tab call hoga jab promise resolve hoga
+    });
+</script>
+</html>
+
+
+
+
