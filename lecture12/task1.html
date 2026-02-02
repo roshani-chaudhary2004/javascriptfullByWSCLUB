@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>White</button>
+    <button>Red</button>
+    <button>Black</button>
+</body>
+<script>
+    bodyElement=document.querySelector("body")
+    let allbtns=document.querySelectorAll("button")
+    allbtns.forEach((btn)=>{
+        btn.addEventListener("click",()=>{
+            localStorage.setItem("colortheme",btn.innerHTML.toLowerCase()) // ye data localstorage me ja raha
+            localStorage.setItem("Time",new Date().toLocaleTimeString())
+            localStorage.setItem("TimeX",new Date().toLocaleTimeString())
+            setColorThemeBody() // ye local storage se data lekar aa raha
+
+
+
+            // btn.innerHTML.toLocaleLowerCase()
+
+
+        })
+    })
+    let setColorThemeBody=()=>{
+        let color=localStorage.getItem("colortheme") //data localstorsage se lekar ana brouser par 
+        // console.log(color);
+        bodyElement.style.background=color
+        
+    }
+    setColorThemeBody()
+    localStorage.removeItem("Time") // AB LOCALStorage me time nahi show hoga
+    localStorage.clear() // local storage ke under jitna data hai pura gayab ho jayega refresh karne par
+   console.log( localStorage.key(0)) // localStorage key pass karta
+</script>
+</html>

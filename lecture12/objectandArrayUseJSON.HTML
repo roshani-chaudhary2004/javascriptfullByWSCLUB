@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+</body>
+<script>
+    // AGR KOI OBJECT OR ARRAY diya huya hai to hmm usme direct localStorage nahi laga sakte usko json me convert karo
+    let user={
+        userName:"ws",
+        userEmail:"rose@gmail.com"
+    }
+    localStorage.setItem("user",JSON.stringify(user)) // localStorage ne data store ho gai
+    // data ko get krna to json ko object me convert ke liye JSON.parse apply kro
+    // let getUserData=localStorage.getItem("user")
+    // console.log(getUserData,typeof(getUserData)); // type String deta hai 
+    // JSON.parse ka use karo
+
+    
+      let getUserData=JSON.parse(localStorage.getItem("user")) // json to Object convert
+          console.log(getUserData,typeof(getUserData));// type object ayega
+</script>
+</html>
