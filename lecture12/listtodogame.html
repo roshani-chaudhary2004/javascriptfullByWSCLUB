@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todo App</title>
+
+<style>
+
+ /* -------- Reset CSS -------- */
+
+ *{
+    margin:0;
+    padding:0;
+    font-family:sans-serif;
+    box-sizing:border-box;
+ }
+
+ /* -------- Body -------- */
+
+ body{
+    background-color:yellow;
+    color:black;
+    text-align:center;
+ }
+
+ h1{
+    margin-top:20px;
+ }
+
+ /* -------- Main Box -------- */
+
+ .mainTodoList{
+    width:70%;
+    margin:20px auto;
+    padding:20px;
+    background-color:aliceblue;
+    border-radius:8px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+ }
+
+ /* -------- Input -------- */
+
+ input[type="text"]{
+    width:70%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:4px;
+ }
+
+ /* -------- Button -------- */
+
+ button{
+    padding:10px 15px;
+    margin-left:10px;
+    border:none;
+    border-radius:4px;
+    background-color:palevioletred;
+    color:black;
+    cursor:pointer;
+ }
+
+ button:hover{
+    background-color:mediumvioletred;
+ }
+
+ /* -------- List -------- */
+
+ ul{
+    list-style:none;
+    margin-top:20px;
+ }
+
+ li{
+    background-color:burlywood;
+    margin-bottom:10px;
+    padding:10px;
+    border-radius:4px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border:1px solid #ccc;
+    text-decoration:line-through;
+ }
+
+ li button{
+    background-color:wheat;
+    padding:5px 10px;
+ }
+
+</style>
+</head>
+
+<body>
+
+<h1>My ToDo List</h1>
+
+<div class="mainTodoList">
+
+   <!-- Input field and button -->
+
+   <div>
+      <input type="text" id="todoInput" placeholder="Add a new task...">
+      <button id="addTodoBtn">Add Task</button>
+   </div>
+
+   <!-- Todo list -->
+
+   <ul id="todoList">
+      <!-- <li>
+        <span>1.Html</span>
+        <button>&times;</button>
+      </li> -->
+   </ul>
+
+</div>
+
+<script>
+
+ // -------- Get elements --------
+
+ let addTodoBtn = document.getElementById("addTodoBtn");   // Add button
+ let todoInput = document.getElementById("todoInput");   // Input box
+ let todoList  = document.getElementById("todoList");    // UL list
+
+ // -------- Get data from localStorage --------
+
+ // Agar TODO data pehle se hai to use lo
+ // warna empty array banao
+
+ let todoArray = 
+      localStorage.getItem("TODO") 
+      ?  JSON.parse(localStorage.getItem("TODO")) 
+      : []
+ ;
+
+ // -------- Button click event --------
+
+ addTodoBtn.addEventListener("click",()=>{
+
+     // Ek object bana rahe hain
+
+     let object = {
+        title : todoInput.value,   // task name
+        isStatus : true
+     };
+
+     // Object ko array me push karo
+
+     todoArray.push(object); 
+
+     // Array ko localStorage me save karo
+
+     localStorage.setItem("TODO", JSON.stringify(todoArray));// Array ko localStorage me save karo
+
+     // Screen par data dikhao
+
+     showAllTodoList();
+ });
+
+ // -------- Show todo list --------
+
+ let showAllTodoList = ()=>{
+
+     // LocalStorage se fresh data lao
+
+     let todoArray = 
+        localStorage.getItem("TODO") 
+        ?  JSON.parse(localStorage.getItem("TODO")) 
+        : []
+
+
+     let list = "";
+
+     // Array par loop
+
+     todoArray.forEach((todoItem,index)=>{
+
+        list += `
+        <li>
+           ${index+1} 
+           <span>${todoItem.title}</span>
+           <button>&times;</button>
+        </li>`;
+     });
+
+     // UL me list daal do
+
+     todoList.innerHTML = list; // UL me list daal do
+ };
+
+ // -------- Page load par show --------
+
+ showAllTodoList();
+
+
+
+
+
+ let  taskMarked = document.querySelectorAll("#todoList li span");
+
+</script>
+
+</body>
+</html>
