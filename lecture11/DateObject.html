@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: sans-serif;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+</body>
+
+<script>
+    let currentData=new Date()
+    console.log(currentData); // current date btata hai
+      console.log(currentData.getFullYear()); //2026 dega
+        console.log(currentData.getMonth()); // cureent me jo month hai vo dega index 1-- febuary
+          console.log(currentData.getDay()); // index 1-- de raha to monday hai
+            console.log(currentData.getHours());
+              console.log(currentData.getHours()<12 ?currentData.getHours():currentData.getHours()-12 ); // agr hour 12 se chhoti hai to print karvaye nahi to 12 se minus kardo
+              console.log(currentData.getMinutes()) // CUREENT MINTUES DETA
+               console.log(currentData.toLocaleDateString()) // PURA DATE DEGA
+                console.log(currentData.toLocaleTimeString())
+
+
+                let  h1Element=document.querySelector("h1")
+                let digitalClock=()=>{// ye function hai
+                       let currentData=new Date()
+                h1Element.innerHTML=currentData.toLocaleTimeString()
+                    
+                }
+                digitalClock()  // ye call kiya khud ko aur page refrash karne par koi time lagta data aane me 
+                setInterval(digitalClock,2000) // ye interval call hai
+</script>
+              
+               
+
+
+</html>

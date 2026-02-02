@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+            font-family: sans-serif;
+        }
+        .modalDiv{
+            position: fixed;
+            height: 350px;
+            width:350px;
+            box-shadow:0px 0px 10px 2px #630808;
+            left: 50%;
+             top: -1000px;
+             transition: 0.5s;
+            transform: translate(-50%,-50%);
+           }
+           .modalDiv h2{
+            padding: 10px 0px;
+            text-align: center;
+            border-bottom: 1px solid #a1c211;
+            position: relative;
+           }
+           .modalDiv h2 span{
+            position:absolute;
+            right: 10px;
+            cursor: pointer;
+           }
+    </style>
+</head>
+<body>
+    <button>show Model</button>
+    <div class="modalDiv">
+        <h2 >Enquire Now <span>&times;</span></h2>
+        <form action=""></form>
+    </div>
+</body>
+<script>
+    let btn=document.querySelector("button")//targetbutton
+    let modalDivElement=document.querySelector(".modalDiv")// modeldiv ko target kiya
+    let closeBtn=document.querySelector(".modalDiv span") // modelDiv ke span ko target
+    setTimeout(()=>{
+       modalDivElement.style.top="50%" // 2s  baad page top se aa jayega
+    },2000)
+    btn.addEventListener("click",()=>{
+        modalDivElement.style.top="50%" // ye click karne par page uppar se ayega
+       });
+    closeBtn.addEventListener("click",()=>{
+        modalDivElement.style.top="-1000px"
+    })
+
+</script>
+</html>

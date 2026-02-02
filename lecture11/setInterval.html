@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let c=1
+    let getData=()=>{
+        if(c==10){     // c ki values 10 vone par data stop ho jayegi
+            clearInterval(myInterval) 
+        }
+        console.log(c,"welcome to roshani");
+        c++;
+        
+        
+    }
+let myInterval=setInterval(getData,2000)
+    // setInterval(getData,2000) // 2 sec ke baad c ki values jitna increase hoga utna welcome to roshani print hoga
+</script>
+</html>
