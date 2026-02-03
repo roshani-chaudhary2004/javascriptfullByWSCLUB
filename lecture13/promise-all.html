@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // use of promise all karte hai asynchronous code ko handle karne ke liye aur callback hell se bachne ke liye
+    let doHomework=(subject)=>{
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve(`completed ${subject} homework`);
+            },3000)
+            })
+        }
+        let finishHomework=async()=>{ // async function banaya hai jisme hum await aur promise.all ka use karenge
+            let allpromise=await Promise.all( // promise.all ka use karte hai taki hum multiple promises ko ek sath handle kar sake
+              [ doHomework("math"), // ye sab promises parallelly execute honge jo  array ke under call kiye gaye hai
+                doHomework("science"),
+                doHomework("english")
+              ]
+            )
+            console.log(allpromise);
+            console.log("my all task done");
+            
+        }
+         finishHomework();
+
+         // output:
+            // [ 'completed math homework',
+            //   'completed science homework',
+            //   'completed english homework'
+            // ]
+            // my all task done (after 3 sec)
+            // sabhi tasks parallelly complete honge aur 3 sec ke baad hi output milega kyuki sabhi tasks me 3 sec ka delay hai isliye sabhi tasks 3 sec me complete ho jayenge aur fir output milega
+            // sabnse pehle sabhi tasks complete honge fir output milega kyuki humne promise.all ka use kiya hai jo ki sabhi promises ko ek sath handle karta hai aur jab sabhi promises complete ho jate hai tabhi ye aage badhta hai
+
+
+</script>
+</html>

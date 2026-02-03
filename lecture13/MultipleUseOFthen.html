@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // promise ka use karte hai asynchronous code ko handle karne ke liye aur callback hell se bachne ke liye
+    // multiple use of then method
+    let doneTask=(taskNumber,time)=>{ // ye ek promise return karega and ye ek arrow function hai
+        return new Promise((resolve,reject)=>{ // ye ek promise object create karega
+            setTimeout(()=>{ // ye asynchrounous task hai jisme hum time delay kar rahe hai
+                console.log("task",taskNumber); // task complete hone par ye print hoga
+                resolve(); // task complete hone par promise resolve ho jayega iska matlab hai ki ye successful ho gaya ye yaha isliye use kar rahe hai taki hum then method ko call kar sake
+            },time); // time ke baad ye task complete hoga
+                
+            })
+    }
+    // chaining of then method
+    // pehle doneTask(1,10000) call hoga fir uske baad jo bhi then me hai vo sequentially call hote jayenge
+    doneTask(1,10000) // first task after 10 sec ke baad hoga
+    .then((res)=> doneTask(2,5000)) // second task after 5 sec ke baad hoga
+    .then((res)=> doneTask(3,2000))// third task after 2 sec ke baad hoga
+    .then((res)=> doneTask(4,1000))// fourth task after 1 sec ke baad hoga
+    // output:
+    // task 1 (after 10 sec)
+    // task 2 (after 5 sec)
+    // task 3 (after 2 sec)
+    // task 4 (after 1 sec)
+    // sabse pehle task 1 complete hoga fir task 2 fir task 3 fir task 4 kyuki humne sequentially then method ko call kiya hai chhahe miliseconds kam hai fir bhi ye sequentially hi chalega example ke liye agar humne task 1 ko 1 sec diya aur task 2 ko 5 sec to bhi task 1 pehle complete hoga fir task 2 kyuki humne sequentially then method ko call kiya hai
+
+</script>
+</html>

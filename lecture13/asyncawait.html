@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // use of async await karte hai asynchronous code ko handle karne ke liye aur callback hell se bachne ke liye
+     let doHomework=(subject)=>{ // ye ek promise return karega and ye ek arrow function hai
+        return new Promise((resolve,reject)=>{// ye ek promise object create karega jo ki asynchronous task ko handle karega
+            setTimeout(()=>{  // ye asynchrounous task hai jisme hum time delay kar rahe hai
+                resolve(`completed ${subject} homework`); // task complete hone par promise resolve ho jayega iska matlab hai ki ye successful ho gaya ye yaha isliye use kar rahe hai taki hum async await me isko use kar sake
+            },3000) // 3 sec ke baad ye task complete hoga
+            })
+        }
+     // data ko fetch karne ke liye hum async await ka use karenge
+     let finishHomework=async()=>{ // async function banaya hai jisme hum await ka use karenge
+        let mytask=await doHomework("math"); // await ka use karte hai taki ye line complete hone ke baad hi next line execute ho
+        console.log(mytask); // jab task complete hoga tab ye print hoga
+     let mytask2=await doHomework("science"); // await ka use karte hai taki ye line complete hone ke baad hi next line execute ho
+        console.log(mytask2);
+    let mytask3=await doHomework("english");
+        console.log(mytask3);
+     }
+      finishHomework(); // function call kiya hai iska use isliye kar rahe hai taki hum async await ka use kar sake ye ye btata hai ki ye function asynchronous hai aur isme hum await ka use kar rahe hai
+
+
+     // output:
+     // completed math homework (after 3 sec)
+     // completed science homework (after 3 sec)
+     // completed english homework (after 3 sec)
+     finishHomework(); // function call kiya hai
+</script>
+</html>
