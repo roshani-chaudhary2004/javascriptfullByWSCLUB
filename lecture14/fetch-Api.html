@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // fetch API ka use karte hai data ko asynchronously retrieve karne ke liye
+    // asynchronously retrieve karne ka matlab hai ki hum data ko background me fetch karte hai bina page ko reload kiye
+    // backround me data fetch karne ke liye hum fetch API ka use karte hai jo ki ek promise return karta hai
+    let getProducts=async ()=>{
+        let apiFirstResponse=await fetch(`https://dummyjson.com/products`); // fetch promise return karega
+        let finalRes=await apiFirstResponse.json(); // json method bhi ek promise return karta hai iska main reason ye hai ki json method bhi asynchronously data ko parse karta hai- parse matlab data ko readable format me convert karta hai isme await ka use kiya hai taki hum json method ke complete hone ka wait kar sake
+        console.log(finalRes); // yaha par finalRes ek pending promise hoga kyuki json method ne abhi tak data ko parse nahi kiya hai parse hone me thoda time lagta hai isliye ye pending state me rahega-- parse matlab data ko readable format me convert karna
+        console.log(finalRes.products); // yaha par hum products ko access kar rahe hai jo ki finalRes ke under ek property hai 
+        
+    }
+    getProducts();
+</script>
+</html>

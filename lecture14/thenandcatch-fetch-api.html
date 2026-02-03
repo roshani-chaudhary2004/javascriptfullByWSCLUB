@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // fetch api me use of then and catch
+    let getProducts=()=>{ // arrow function
+         fetch(`https://dummyjson.com/products`) // fetch promise return karega
+        .then((res)=>res.json()) // json bhi promise return karega aur yeh bhi then se handle karna padega
+        .then((finalRes)=>{ // finalRes me data aajayega
+            console.log(finalRes); // yeh pura data hoga
+            console.log(finalRes.products); // yeh products ka array hoga
+        })
+    }
+    getProducts();
+</script>
+</html>
