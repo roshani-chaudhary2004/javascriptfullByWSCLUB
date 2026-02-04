@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: burlywood;
+         
+        }
+        h1{
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 32px;
+            
+           
+        }
+        .productSection{
+            background-color: rgb(36, 36, 36);
+            padding: 30px;
+          
+        }
+        .productRow{
+            display: grid;
+            grid-template-columns: 220px auto;
+            gap: 30px;
+        }
+        .productRow aside ul{
+             list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            
+        }
+
+        .productRow aside{
+            box-shadow: 0px 0px 10px 2px #ccc;
+            padding: 15px;
+        }
+
+        .productRow aside ul li{
+            padding: 7px;
+            cursor: pointer;
+            color: lightseagreen;
+   
+        }
+
+    </style>
+</head>
+<body>
+    <section class="productSection">
+   <h1>our products</h1> 
+   <div class="productRow">
+    <aside>
+        <h2>Product List</h2>
+        <ul>
+            <li>Category 1</li>
+            <li>Category 2</li>
+            <li>Category 3</li>
+            <li>Category 4</li>
+    </aside>
+    <div></div>
+   </div>
+   </section>
+</body>
+</html>
